@@ -3,6 +3,7 @@
 @import "../../../govuk/helpers/all";
 @import "../../../govuk/helpers/typography";
 @import "../../../govuk/objects/grid";
+@import "../../tools/all";
 
 @include govuk-exports("idsk/component/subscription-form") {
   .idsk-subscription-form {

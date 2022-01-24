@@ -3,6 +3,7 @@
 @import "../../../govuk/helpers/all";
 @import "../../../govuk/helpers/typography";
 @import "./node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../tools/all";
 
 @include govuk-exports("idsk/component/header-extended") {
   $idsk-header-background: govuk-colour("white") !default;

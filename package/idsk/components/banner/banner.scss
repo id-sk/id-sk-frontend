@@ -2,6 +2,7 @@
 @import "../../../govuk/tools/all";
 @import "../../../govuk/helpers/all";
 @import "../../../govuk/helpers/typography";
+@import "../../tools/all";
 
 @include govuk-exports("idsk/component/banner") {
     .idsk-banner .app-pane-grey {

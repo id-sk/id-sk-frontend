@@ -1,8 +1,8 @@
 @import "../../../govuk/settings/all";
 @import "../../../govuk/tools/all";
 @import "../../../govuk/helpers/all";
-
 @import "../../../govuk/helpers/typography";
+@import "../../tools/all";
 
 @include govuk-exports("idsk/component/card") {
   .idsk-card {

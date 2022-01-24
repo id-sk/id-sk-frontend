@@ -1,6 +1,7 @@
 @import "../../../govuk/settings/all";
 @import "../../../govuk/tools/all";
 @import "../../../govuk/helpers/all";
+@import "../../tools/all";
 
 @include govuk-exports("idsk/component/registration-for-event") {
   .idsk-registration-for-event {

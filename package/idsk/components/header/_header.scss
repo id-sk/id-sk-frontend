@@ -1,8 +1,8 @@
 @import "../../../govuk/settings/all";
 @import "../../../govuk/tools/all";
 @import "../../../govuk/helpers/all";
-
 @import "../../../govuk/helpers/typography";
+@import "../../tools/all";
 
 @include govuk-exports("idsk/component/header") {
 
@@ -322,7 +322,7 @@
     float: right;
     margin-top: -0.5rem;
   }
-  
+
   .govuk-header__container--full-width {
     .idsk-header__user-icon {
       @include mq ($from: desktop) {
@@ -330,7 +330,7 @@
         margin-right: 0.5rem;
       }
     }
-    
+
     .idsk--header__user-name {
       margin-top: -0.5rem;
     }

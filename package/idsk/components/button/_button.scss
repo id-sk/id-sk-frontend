@@ -2,6 +2,7 @@
 @import "../../overrides/all";
 @import "../../../govuk/tools/all";
 @import "../../../govuk/helpers/all";
+@import "../../tools/all";
 
 @include govuk-exports("idsk/component/button") {
   $idsk-button-colour: govuk-colour("green", $legacy: #00823b); // sass-lint:disable no-color-literals
