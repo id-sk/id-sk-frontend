@@ -1,3 +1,6 @@
+{% set ariaLabel = "Rozbaliteľný rázcestník je zabalený" %}
+{% set dataTextHide = "Rozbaliteľný rázcestník je zabalený" %}
+{% set dataTextShow = "Rozbaliteľný rázcestník je rozbalený" %}
 
 {% set numberOfCols = params.columns %}
 {% set classes = '' %}
@@ -32,7 +35,7 @@
 {% endfor %}
 {% if (params.hideTiles) %}
     <div class="govuk-grid-column-full idsk-crossroad__collapse--shadow idsk-crossroad__uncollapse-div {{' idsk-crossroad__uncollapse-hide--desktop' if (params.items.length < 6 and numberOfCols==1) or (params.items.length < 11 and numberOfCols==2)}} {{' idsk-crossroad__uncollapse-hide--mobile' if params.items.length < 6}}">
-        <button id="idsk-crossroad__uncollapse-button" class="idsk-crossroad__colapse--button" type="button" data-line1="Zobraziť viac" data-line2="Zobraziť menej">Zobraziť viac</button>
+        <button id="idsk-crossroad__uncollapse-button" class="idsk-crossroad__colapse--button" type="button" aria-expanded="false" aria-label="{{ ariaLabel }}" data-text-for-show="{{ dataTextShow }}" data-text-for-hide="{{ dataTextHide }}" data-line1="Zobraziť viac" data-line2="Zobraziť menej">Zobraziť viac</button>
     </div>
 {% endif %}
 </div>

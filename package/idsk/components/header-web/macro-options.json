@@ -98,6 +98,12 @@
                         "type": "string",
                         "required": false,
                         "description": "link to english mutation"
+                    },
+                    {
+                        "name": "language",
+                        "type": "string",
+                        "required": false,
+                        "description": "Set the language"
                     }
                 ]
             }

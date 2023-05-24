@@ -727,9 +727,12 @@ InPageNavigation.prototype.handleClickLink = function (e) {
 InPageNavigation.prototype.handleClickLinkPanel = function (e) {
     var $module = this.$module;
     var $linkPanelButton = $module.querySelector('.idsk-in-page-navigation__link-panel');
+    var $expandedButton = $module.querySelector('.idsk-in-page-navigation__link-panel-button');
 
     $module.classList.add('idsk-in-page-navigation--expand');
     $linkPanelButton.removeEventListener('click', $module.boundHandleClickLinkPanel, true);
+    $expandedButton.setAttribute('aria-expanded', 'true');
+    $expandedButton.setAttribute('aria-label', $expandedButton.getAttribute('data-text-for-show'));
     document.addEventListener('click', $module.boundCheckCloseClick, true);
 };
 
@@ -742,12 +745,15 @@ InPageNavigation.prototype.checkCloseClick = function (e) {
     var $navigationList = $el.closest('.idsk-in-page-navigation__list');
     var $module = this.$module;
     var $linkPanelButton = $module.querySelector('.idsk-in-page-navigation__link-panel');
+    var $expandedButton = $module.querySelector('.idsk-in-page-navigation__link-panel-button');
 
     if ($navigationList == null) {
         e.stopPropagation(); // prevent bubbling
         $module.classList.remove('idsk-in-page-navigation--expand');
         $linkPanelButton.addEventListener('click', $module.boundHandleClickLinkPanel, true);
         document.removeEventListener('click', $module.boundCheckCloseClick, true);
+        $expandedButton.setAttribute('aria-expanded', 'false');
+        $expandedButton.setAttribute('aria-label', $expandedButton.getAttribute('data-text-for-hide'));
     }
 };
 

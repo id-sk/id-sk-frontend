@@ -1943,7 +1943,7 @@ FooterExtended.prototype.handleSubmitButtonClick = function (e) {
         var subject = $feedbackInfo.getAttribute("data-subject");
         var emailBody = $feedbackInfo.textContent;
         emailBody = emailBody.replace("%issue%", selectedOption).replace("%description%", issueText);
-        document.location = "mailto:"+email+"?subject="+subject+"&body="+emailBody;
+        document.location = "mailto:"+email+"?subject="+subject+"&body="+encodeURIComponent(emailBody);
     }
 };
 
@@ -2614,7 +2614,7 @@ HeaderWeb.prototype.checkBlurLanguageSwitcherClick = function (e) {
 HeaderWeb.prototype.handleBackTabbing = function (e) {
     //shift was down when tab was pressed
     if(e.shiftKey && e.keyCode == 9 && document.activeElement == this.$languageBtn) {
-        this.handleLanguageSwitcherClick(e);
+        // this.handleLanguageSwitcherClick(e);
     }
 };
 
@@ -2747,7 +2747,7 @@ HeaderWeb.prototype.checkBlurMenuItemClick = function (e) {
  * @param {object} e
  */
 HeaderWeb.prototype.showMobileMenu = function () {
-    var closeText = this.menuBtnText ? 'Zavrieť' : '';
+    var closeText = this.$menuButton.getAttribute('data-text-for-close') ? this.$menuButton.getAttribute('data-text-for-close') : '';
     var $mobileMenu = this.$module.querySelector('.idsk-header-web__nav');
     toggleClass($mobileMenu, 'idsk-header-web__nav--mobile');
     toggleClass(this.$menuButton, 'idsk-header-web__main-headline-menu-button--active');
@@ -4278,6 +4278,7 @@ Crossroad.prototype.handleShowItems = function (e) {
   var $uncollapseDiv = this.$module.querySelector('.idsk-crossroad__uncollapse-div');
   var $crossroadTitles = this.$module.querySelectorAll('.idsk-crossroad-title');
   var $crossroadSubtitles = this.$module.querySelectorAll('.idsk-crossroad-subtitle');
+  var $expandedButton = this.$module.querySelector('.idsk-crossroad__colapse--button');
 
   $crossroadItems.forEach(function (crossroadItem) {
     toggleClass(crossroadItem, 'idsk-crossroad__item--two-columns-show');
@@ -4291,6 +4292,13 @@ Crossroad.prototype.handleShowItems = function (e) {
   toggleClass(e.srcElement, 'idsk-crossroad__colapse--button-show');
   toggleClass($uncollapseDiv, 'idsk-crossroad__collapse--shadow');
   toggleClass($uncollapseDiv, 'idsk-crossroad__collapse--arrow');
+  if($expandedButton.classList.contains('idsk-crossroad__colapse--button-show')) {
+    $expandedButton.setAttribute('aria-expanded', 'true');
+    $expandedButton.setAttribute('aria-label', $expandedButton.getAttribute('data-text-for-show'));
+  } else {
+    $expandedButton.setAttribute('aria-expanded', 'false');
+    $expandedButton.setAttribute('aria-label', $expandedButton.getAttribute('data-text-for-hide'));
+  }
 };
 
 function InPageNavigation($module) {
@@ -4361,9 +4369,12 @@ InPageNavigation.prototype.handleClickLink = function (e) {
 InPageNavigation.prototype.handleClickLinkPanel = function (e) {
     var $module = this.$module;
     var $linkPanelButton = $module.querySelector('.idsk-in-page-navigation__link-panel');
+    var $expandedButton = $module.querySelector('.idsk-in-page-navigation__link-panel-button');
 
     $module.classList.add('idsk-in-page-navigation--expand');
     $linkPanelButton.removeEventListener('click', $module.boundHandleClickLinkPanel, true);
+    $expandedButton.setAttribute('aria-expanded', 'true');
+    $expandedButton.setAttribute('aria-label', $expandedButton.getAttribute('data-text-for-show'));
     document.addEventListener('click', $module.boundCheckCloseClick, true);
 };
 
@@ -4376,12 +4387,15 @@ InPageNavigation.prototype.checkCloseClick = function (e) {
     var $navigationList = $el.closest('.idsk-in-page-navigation__list');
     var $module = this.$module;
     var $linkPanelButton = $module.querySelector('.idsk-in-page-navigation__link-panel');
+    var $expandedButton = $module.querySelector('.idsk-in-page-navigation__link-panel-button');
 
     if ($navigationList == null) {
         e.stopPropagation(); // prevent bubbling
         $module.classList.remove('idsk-in-page-navigation--expand');
         $linkPanelButton.addEventListener('click', $module.boundHandleClickLinkPanel, true);
         document.removeEventListener('click', $module.boundCheckCloseClick, true);
+        $expandedButton.setAttribute('aria-expanded', 'false');
+        $expandedButton.setAttribute('aria-label', $expandedButton.getAttribute('data-text-for-hide'));
     }
 };
 
@@ -4571,8 +4585,11 @@ TableFilter.prototype.handleClickTogglePanel = function (e) {
   // set text for toggle
   var hidden = $content.style.height === '0px';
   var newToggleText = hidden ? openText : closeText;
+  var newToggleButton = hidden ? 'false' : 'true';
+  var $ariaToggleForm = document.querySelector('.idsk-table-filter__content');
   $el.innerHTML = newToggleText;
   $el.setAttribute('aria-label', newToggleText + ($el.dataset.categoryName ? ' ' + $el.dataset.categoryName : ''));
+  $ariaToggleForm.setAttribute('aria-hidden', newToggleButton);
 
   // toggle tabbable if content is shown or not
   var $items = $content.querySelectorAll(':scope > .idsk-table-filter__filter-inputs input, :scope > .idsk-table-filter__filter-inputs select, .idsk-filter-menu__toggle');
@@ -4811,7 +4828,6 @@ Stepper.prototype.initControls = function () {
     // Create "Zobraziť všetko" button and set attributes
     this.$openAllButton = document.createElement('button');
     this.$openAllButton.setAttribute('type', 'button');
-    this.$openAllButton.innerHTML = $accordionControls.dataset.line1 + ' <span class="govuk-visually-hidden">sections</span>';
     this.$openAllButton.setAttribute('class', this.$openAllClass);
     this.$openAllButton.setAttribute('aria-expanded', 'false');
     this.$openAllButton.setAttribute('type', 'button');
@@ -4978,7 +4994,6 @@ Stepper.prototype.updateOpenAllButton = function ($expanded) {
   
   if ($accordionControls) {
     var $newButtonText = $expanded ? $accordionControls.dataset.line2 : $accordionControls.dataset.line1;
-    $newButtonText += '<span class="govuk-visually-hidden"> sections</span>';
     this.$openAllButton.setAttribute('aria-expanded', $expanded);
     this.$openAllButton.innerHTML = $newButtonText;
   } else {
@@ -5604,6 +5619,16 @@ Tabs$1.prototype.toggleMobileTab = function ($tab, currentTab) {
   if ($mobileTab.classList.contains('idsk-tabs__mobile-tab--selected') && currentTab) {
     $mobileTab.classList.remove('idsk-tabs__mobile-tab--selected');
     $mobilePanel.classList.add(this.mobileTabHiddenClass);
+    $mobileTab.setAttribute('aria-expanded', 'false');
+    $mobileTab.setAttribute('aria-label', $mobileTab.getAttribute('text-for-hide'));
+  }
+  else if ($mobileTab.classList.contains('idsk-tabs__mobile-tab--selected')) {
+    $mobileTab.setAttribute('aria-expanded', 'true');
+    $mobileTab.setAttribute('aria-label', $mobileTab.getAttribute('text-for-show'));
+  }
+  else {
+    $mobileTab.setAttribute('aria-expanded', 'false');
+    $mobileTab.setAttribute('aria-label', $mobileTab.getAttribute('text-for-hide'));
   }
 };
 
@@ -5900,6 +5925,59 @@ function initAll(options) {
 
   initExtended(options);
 }
+
+function Header$1($module) {
+  this.$module = $module;
+}
+
+Header$1.prototype.init = function () {
+  // Check for module
+  var $module = this.$module;
+  if (!$module) {
+    return
+  }
+
+  // Check for button
+  var $toggleButton = $module.querySelector('.govuk-js-header-toggle');
+  if (!$toggleButton) {
+    return
+  }
+
+  // Handle $toggleButton click events
+  $toggleButton.addEventListener('click', this.handleClick.bind(this));
+};
+
+/**
+* Toggle class
+* @param {object} node element
+* @param {string} className to toggle
+*/
+Header$1.prototype.toggleClass = function (node, className) {
+  if (node.className.indexOf(className) > 0) {
+    node.className = node.className.replace(' ' + className, '');
+  } else {
+    node.className += ' ' + className;
+  }
+};
+
+/**
+* An event handler for click event on $toggleButton
+* @param {object} event event
+*/
+Header$1.prototype.handleClick = function (event) {
+  var $module = this.$module;
+  var $toggleButton = event.target || event.srcElement;
+  var $target = $module.querySelector('#' + $toggleButton.getAttribute('aria-controls'));
+
+  // If a button with aria-controls, handle click
+  if ($toggleButton && $target) {
+    this.toggleClass($target, 'idsk-header__navigation--open');
+    this.toggleClass($toggleButton, 'idsk-header__menu-button--open');
+
+    $toggleButton.setAttribute('aria-expanded', $toggleButton.getAttribute('aria-expanded') !== 'true');
+    $target.setAttribute('aria-hidden', ($target.getAttribute('aria-hidden') === 'false').toString());
+  }
+};
 
 /**
  * Header for extended websites
@@ -6244,9 +6322,17 @@ SearchResultsFilter.prototype.handleClickLinkPanel = function (e) {
     var $el = e.target || e.srcElement;
     var $linkPanelButton = $el.closest('.idsk-search-results__link-panel');
     var $contentPanel = $linkPanelButton.querySelector('.idsk-search-results__list');
+    var $ariaLabelComponent = $el.closest('.idsk-search-results__link-panel-button');
 
     toggleClass($contentPanel, 'idsk-search-results--hidden');
     toggleClass($linkPanelButton, 'idsk-search-results--expand');
+    if ($linkPanelButton.classList.contains('idsk-search-results--expand')) {
+        $ariaLabelComponent.setAttribute('aria-expanded', 'true');  
+        $ariaLabelComponent.setAttribute('aria-label', $ariaLabelComponent.getAttribute('data-text-for-hide')); 
+    } else {
+        $ariaLabelComponent.setAttribute('aria-expanded', 'false');
+        $ariaLabelComponent.setAttribute('aria-label', $ariaLabelComponent.getAttribute('data-text-for-show'));
+    }
 };
 
 function initAll$1(options) {
@@ -6256,6 +6342,11 @@ function initAll$1(options) {
   // Allow the user to initialise ID-SK Frontend in only certain sections of the page
   // Defaults to the entire document if nothing is set.
   var scope = typeof options.scope !== 'undefined' ? options.scope : document;
+
+  var $headers = scope.querySelectorAll('[data-module="idsk-header"]');
+  nodeListForEach($headers, function ($headers) {
+    new Header$1($headers).init();
+  });
 
   // Find first Header-extended module to enhance.
   var $headersExtended = scope.querySelectorAll('[data-module="idsk-header-extended"]');
@@ -6275,6 +6366,7 @@ function initAll$1(options) {
 }
 
 exports.initAll = initAll$1;
+exports.Header = Header$1;
 exports.HeaderExtended = HeaderExtended;
 exports.SearchResultsFilter = SearchResultsFilter;
 

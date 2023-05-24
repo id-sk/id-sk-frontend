@@ -1,3 +1,6 @@
+{% set accordionOpen = "Akordeón Úvod je otvorený" %}
+{% set accordionClose = "Akordeón Úvod je zatvorený" %}
+
 <div 
   class="idsk-in-page-navigation{%- if params.classes %} {{ params.classes }}{% endif %} govuk-grid-column-one-quarter"
   {% for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}
@@ -6,7 +9,7 @@
   <div class="idsk-in-page-navigation-wrapper">
     <div class="idsk-in-page-navigation__title">Obsah</div>
     <div class="idsk-in-page-navigation__link-panel">
-      <button class="idsk-in-page-navigation__link-panel-button">{{ params.items[0].text }}</button>
+      <button aria-expanded="false" data-text-for-show="{{ accordionOpen }}" data-text-for-hide="{{ accordionClose }}" aria-label="{{ accordionClose }}" class="idsk-in-page-navigation__link-panel-button">{{ params.items[0].text }}</button>
     </div>
     <ul class="idsk-in-page-navigation__list">
     {% for item in params.items %}

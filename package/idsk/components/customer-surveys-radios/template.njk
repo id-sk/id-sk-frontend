@@ -1,5 +1,9 @@
+{% set radioButtons = "Prepínače :" %}
+
 <div data-module="idsk-customer-surveys-radios" class="idsk-customer-surveys-radios {{ params.classes if params.classes }}">
     <div class="govuk-radios" data-id="{{ params.id if params.id }}">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset-legend">{{ radioButtons }} </legend>
         {% for item in params.feedbackOptions -%}
             <div class="govuk-radios__item {{item.class}}">
                 <input class="govuk-radios__input {{ 'idsk-feedback-textarea--show' if item.textArea }}" {{'checked' if item.checked}} id="{{ item.value }}" name="{{ params.group }}" type="radio" value="{{ item.value }}"/>
@@ -8,6 +12,7 @@
                 </label>
             </div>
         {%- endfor %}
+        </fieldset>
         <br>
     </div>
 </div>

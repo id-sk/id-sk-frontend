@@ -19,10 +19,10 @@
         {% if item %}
             {% if item.heading.isTitle %}
                 <div class="idsk-stepper__section-title">
-                    <div class="idsk-stepper__section-header idsk-stepper__section-subtitle">
+                    <h1 class="idsk-stepper__section-header idsk-stepper__section-subtitle">
                         <p class="govuk-heading-m">{{item.heading.text}}
                         </p>
-                    </div>
+                    </h1>
                 </div>
             {% else %}
             {% set counter = counter + 1 %}

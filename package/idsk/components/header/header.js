@@ -704,11 +704,11 @@ Header.prototype.handleClick = function (event) {
 
   // If a button with aria-controls, handle click
   if ($toggleButton && $target) {
-    this.toggleClass($target, 'govuk-header__navigation--open');
-    this.toggleClass($toggleButton, 'govuk-header__menu-button--open');
+    this.toggleClass($target, 'idsk-header__navigation--open');
+    this.toggleClass($toggleButton, 'idsk-header__menu-button--open');
 
     $toggleButton.setAttribute('aria-expanded', $toggleButton.getAttribute('aria-expanded') !== 'true');
-    $target.setAttribute('aria-hidden', $target.getAttribute('aria-hidden') === 'false');
+    $target.setAttribute('aria-hidden', ($target.getAttribute('aria-hidden') === 'false').toString());
   }
 };
 

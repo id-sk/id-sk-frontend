@@ -50,7 +50,7 @@
   <div class="idsk-table-filter__panel idsk-table-filter__inputs">
     <div class="idsk-table-filter__title govuk-heading-m">{{ filterContentTitle }}</div>
     {{ expandFilterToggle(params, openFilter, closeFilter, false) }}
-    <form class="idsk-table-filter__content" action="{{ params.formAction if params.formAction else '#' }}">
+    <form class="idsk-table-filter__content" aria-hidden="true" action="{{ params.formAction if params.formAction else '#' }}">
       {% if params.categories %}
         {% for category in params.categories %}
           <div class="idsk-table-filter__category">

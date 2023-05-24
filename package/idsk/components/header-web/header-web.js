@@ -839,7 +839,7 @@ HeaderWeb.prototype.checkBlurLanguageSwitcherClick = function (e) {
 HeaderWeb.prototype.handleBackTabbing = function (e) {
     //shift was down when tab was pressed
     if(e.shiftKey && e.keyCode == 9 && document.activeElement == this.$languageBtn) {
-        this.handleLanguageSwitcherClick(e);
+        // this.handleLanguageSwitcherClick(e);
     }
 };
 
@@ -972,7 +972,7 @@ HeaderWeb.prototype.checkBlurMenuItemClick = function (e) {
  * @param {object} e
  */
 HeaderWeb.prototype.showMobileMenu = function () {
-    var closeText = this.menuBtnText ? 'Zavrieť' : '';
+    var closeText = this.$menuButton.getAttribute('data-text-for-close') ? this.$menuButton.getAttribute('data-text-for-close') : '';
     var $mobileMenu = this.$module.querySelector('.idsk-header-web__nav');
     toggleClass($mobileMenu, 'idsk-header-web__nav--mobile');
     toggleClass(this.$menuButton, 'idsk-header-web__main-headline-menu-button--active');

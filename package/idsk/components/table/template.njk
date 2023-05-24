@@ -3,7 +3,7 @@
   {% if params.title or params.caption or params.radioOptions %}
     <div class="idsk-table__heading">
       {% if params.title or params.caption %}
-        <div>
+        <div class="idsk-table__heading-container">
           {% if params.title %}
             <h2 class="govuk-heading-l govuk-!-margin-bottom-4">{{ params.title }}</h2>
           {% endif %}
@@ -17,11 +17,13 @@
         <div class="idsk-table__heading-extended">
           <div class="govuk-form-group">
             <div class="govuk-radios govuk-radios--inline">
+              <fieldset class="govuk-fieldset">
                 {% for radio in params.radioOptions.slice(0, 2) %}
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" type="radio" name="radio-{{ params.uniqueId + '-' + loop.index }}" id="radio-{{ params.uniqueId + '-' + loop.index }}" value="{{ radio.value }}" {% if loop.index == 1 %}checked=""{% endif %}>
-                        <label class="govuk-label govuk-radios__label" for="radio-{{ params.uniqueId + '-' + loop.index }}">{{ radio.title }}</label>
+                        <input class="govuk-radios__input" type="radio" name="radio-{{ params.uniqueId }}" id="radio-{{ params.uniqueId + '-' + loop.index }}" value="{{ radio.value }}" {% if loop.index == 1 %}checked=""{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="radio-{{ params.uniqueId }}">{{ radio.title }}</label>
                     </div>
+                  </fieldset>
                 {% endfor %}
             </div>
           </div>

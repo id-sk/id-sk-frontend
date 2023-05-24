@@ -1,9 +1,14 @@
+{% set ariaLabelDateFrom = "Vstupné pole pre zadanie počiatočného dátumu aktualizácie" %}
+{% set ariaLabelDateTo = "Vstupné pole pre zadanie konečného dátumu aktualizácie" %}
+{% set inputFor = "Vstupné pole pre" %}
+{% set showAccordion = "Rozbaliť akordeón" %}
+{% set hideAccordion = "Zatvoriť akordeón" %}
 
 <div data-module="idsk-search-results-filter" class="govuk-grid-column-one-third {{ params.classes if params.classes }}">
     <div class="idsk-search-results__filter idsk-search-results-filter__filter-panel">
     {% for item in params.filters %}
     <div class="idsk-search-results__link-panel idsk-search-results--expand {{ item.filterClass if item.filterClass }}" >
-        <button class="idsk-search-results__link-panel-button {{ 'idsk-search-results__subtopic' if item.isSubtopic }}">
+        <button class="idsk-search-results__link-panel-button {{ 'idsk-search-results__subtopic' if item.isSubtopic }}" aria-expanded='false' data-text-for-show="{{showAccordion}} {{" " + item.name}}" data-text-for-hide="{{hideAccordion}} {{" " + item.name}}" aria-label="{{showAccordion}} {{" " + item.name}}">
           <span class="idsk-search-results__link-panel__title">
             {{ item.name }}
           </span>
@@ -12,7 +17,7 @@
         <div class="idsk-search-results__list">
           {% if item.isRadio %}
             {% if item.radios.length > 10 %}
-              <input class="govuk-input idsk-search-results__search__input" type="text" title="{{item.searchInputId}}" name="{{item.searchInputId}}" id="{{item.searchInputId}}">
+              <input class="govuk-input idsk-search-results__search__input" type="text" title="{{item.searchInputTitle}}" name="{{item.searchInputId}}" id="{{item.searchInputId}}" aria-label="{{inputFor}}{{" " + item.searchInputTitle}}">
             {% endif %}
                 {% from "../../components/customer-surveys-radios/macro.njk" import idskCustomerSurveysRadios %}
                 {{ idskCustomerSurveysRadios({
@@ -25,7 +30,7 @@
           {% endif %}
           {% if item.isCheckBox %}
             {% if item.checkBoxItems.length > 10 %}
-              <input class="govuk-input idsk-search-results__search__input" type="text" title="{{item.searchInputTitle}}" name="{{item.searchInputId}}" id="{{item.searchInputId}}">
+              <input class="govuk-input idsk-search-results__search__input" type="text" title="{{item.searchInputTitle}}" name="{{item.searchInputId}}" id="{{item.searchInputId}}" aria-label="{{inputFor}} {{" " + item.searchInputTitle}}">
             {% endif %}
             <div class="idsk-option-select-filter {{ params.classes if params.classes }}">
               {% from "checkboxes/macro.njk" import govukCheckboxes %}
@@ -41,12 +46,12 @@
             </span>
             <span class="idsk-search-results__date__span__example">Napr. 2005, alebo 8.3.2021
             </span>
-            <input class="govuk-input" type="text" name="{{item.idFrom}}" id="{{item.idFrom}}">
+            <input class="govuk-input" type="text" name="{{item.idFrom}}" id="{{item.idFrom}}" aria-label="{{ariaLabelDateFrom}}">
               <span class="idsk-search-results__date__span">Zobraziť len výsledky aktualizovaný pred
               </span>
               <span class="idsk-search-results__date__span__example">Napr. 2005, alebo 8.3.2021
               </span>
-            <input class="govuk-input" type="text" name="{{item.idTo}}" id="{{item.idTo}}">
+            <input class="govuk-input" type="text" name="{{item.idTo}}" id="{{item.idTo}}" aria-label="{{ariaLabelDateTo}}">
           {% endif %}
         </div>
     </div>

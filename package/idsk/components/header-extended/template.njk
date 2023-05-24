@@ -1,3 +1,6 @@
+{% set searchTerm = "Zadajte hľadaný výraz" %}
+{% set showHide = "Show or hide Top level navigation" %}
+{% set topLevelNavigation = "Top level navigation" %}
 
 {# language block #}
 {% set languageBlock %}
@@ -50,7 +53,7 @@
     {% if params.navigation %}
     <nav>
       <ul class="idsk-header-extended__navigation {{ params.navigationClasses if params.navigationClasses }}"
-        aria-label="Top Level Navigation">
+        aria-label="{{ topLevelNavigation }}">
         {% for item in params.navigation %}
         <li class="idsk-header-extended__navigation-item
                 {{ ' idsk-header-extended__navigation-item--active' if item.active }}">
@@ -106,7 +109,7 @@
           {{ params.search.label if params.search.label else "Zadajte hľadaný výraz" }}
         </label>
         <input class="govuk-input govuk-!-display-inline-block" id="idsk-header-extended__search-input" name="search"
-          type="text" aria-describedby="input-width-30-hint" aria-label="Zadajte hľadaný výraz" />
+          type="text" aria-describedby="input-width-30-hint" aria-label="{{ searchTerm }}" />
         <button type="submit" class="govuk-button govuk-!-display-inline-block" data-module="govuk-button">
           <span class="govuk-visually-hidden">{{ params.search.button if params.search.button else "Vyhľadať" }}</span>
           <i aria-hidden="true" class="fas fa-search"></i>
@@ -119,7 +122,7 @@
     {{ socialLinksBlock | safe }}
 
     <button type="button" class="idsk-header-extended__menu-button idsk-js-header-extended-side-menu"
-      aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu
+      aria-controls="navigation" aria-label="{{ showHide }}">Menu
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <line x1="5" y1="19.8752" x2="35" y2="19.8752" stroke="#003078" stroke-width="3" />
         <line x1="5" y1="29.2507" x2="30.5009" y2="29.2507" stroke="#003078" stroke-width="3" />
@@ -149,7 +152,7 @@
             {{ params.search.label if params.search.label else "Zadajte hľadaný výraz" }}
           </label>
           <input class="govuk-input govuk-!-display-inline-block" id="idsk-header-extended__search-input-mobile"
-            name="search" type="text" aria-describedby="input-width-30-hint" aria-label="Zadajte hľadaný výraz" />
+            name="search" type="text" aria-describedby="input-width-30-hint" aria-label="{{ searchTerm }}" />
           <button type="submit" class="govuk-button govuk-!-display-inline-block" data-module="govuk-button">
             <span class="govuk-visually-hidden">{{ params.search.button if params.search.button else "Vyhľadať"}}</span>
             <i aria-hidden="true" class="fas fa-search"></i>

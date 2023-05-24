@@ -15,8 +15,8 @@
 <div class="idsk-card idsk-card-{{ type }}">
 
     {% if params.imgSrc %}
-    <a href="{{params.link}}" title="{{ params.heading }}">
-        <img class="idsk-card-img idsk-card-img-{{type}}" src="{{ params.imgSrc }}" alt="{{ params.heading }}" aria-hidden="true" />
+    <a href="{{params.link}}" title="{{ params.heading }}" aria-hidden="true">
+        <img class="idsk-card-img idsk-card-img-{{type}}" src="{{ params.imgSrc }}" alt="{{ params.heading }}" />
     </a>
     {% endif %}
 
@@ -25,9 +25,9 @@
         {{ dateAndTag | safe }}
         {% endif %}
 
-        <div class="idsk-heading idsk-heading-{{ type }}">
+        <h1 class="idsk-heading idsk-heading-{{ type }}">
             <a href="{{params.link}}" class="idsk-card-title govuk-link" title="{{ params.heading }}">{{ params.heading }}</a>
-        </div>
+        </h1>
 
         {% if params.description %}
         {% if type != 'profile-horizontal' and type != 'profile-vertical' %}
@@ -56,7 +56,7 @@
                 <image href="/assets/images/quote-left.png" xlink:href="" width="29" height="25"></image>
             </svg>
         </div>
-        <div class="idsk-quote"> {{ params.quote }}</div>
+        <blockquote class="idsk-quote"> {{ params.quote }}</blockquote>
         <div class="idsk-quote-right" aria-hidden="true">
             <svg width="24" height="20" viewBox="0 0 29 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.1662 24.4934C4.93513 24.2808 8.60138 21.6273 11.4456 17.4817C13.4684 14.5332 15.6824 9.84205 15.6824 6.08707C15.6824 3.14154 13.3705 0.753727 10.5187 0.753727C7.66689 0.753727 5.35503 3.14154 5.35503 6.08707C5.35503 8.59472 7.03065 10.6982 9.28852 11.2681C8.72202 13.2493 7.70737 15.404 6.28192 17.4817C4.38369 20.2485 2.1193 22.3506 -0.000114441 23.5061L2.1662 24.4934Z" fill="#003078"/>

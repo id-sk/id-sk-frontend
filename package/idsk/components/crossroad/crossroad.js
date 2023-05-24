@@ -742,6 +742,7 @@ Crossroad.prototype.handleShowItems = function (e) {
   var $uncollapseDiv = this.$module.querySelector('.idsk-crossroad__uncollapse-div');
   var $crossroadTitles = this.$module.querySelectorAll('.idsk-crossroad-title');
   var $crossroadSubtitles = this.$module.querySelectorAll('.idsk-crossroad-subtitle');
+  var $expandedButton = this.$module.querySelector('.idsk-crossroad__colapse--button');
 
   $crossroadItems.forEach(function (crossroadItem) {
     toggleClass(crossroadItem, 'idsk-crossroad__item--two-columns-show');
@@ -755,6 +756,13 @@ Crossroad.prototype.handleShowItems = function (e) {
   toggleClass(e.srcElement, 'idsk-crossroad__colapse--button-show');
   toggleClass($uncollapseDiv, 'idsk-crossroad__collapse--shadow');
   toggleClass($uncollapseDiv, 'idsk-crossroad__collapse--arrow');
+  if($expandedButton.classList.contains('idsk-crossroad__colapse--button-show')) {
+    $expandedButton.setAttribute('aria-expanded', 'true');
+    $expandedButton.setAttribute('aria-label', $expandedButton.getAttribute('data-text-for-show'));
+  } else {
+    $expandedButton.setAttribute('aria-expanded', 'false');
+    $expandedButton.setAttribute('aria-label', $expandedButton.getAttribute('data-text-for-hide'));
+  }
 };
 
 return Crossroad;

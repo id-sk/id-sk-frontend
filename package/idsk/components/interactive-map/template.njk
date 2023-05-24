@@ -7,6 +7,8 @@
             <div class="idsk-interactive-map__header-radios">
                 <div class="govuk-form-group">
                     <div class="govuk-radios govuk-radios--inline">
+                        <fieldset class="govuk-fieldset">
+                            <legend>Prepínač</legend>
                         <div class="govuk-radios__item idsk-intereactive-map__radio-map">
                             <input class="govuk-radios__input" name="{{ params.radioControlsName }}" id="{{ params.radioControlsName }}-1" type="radio" value="map" {{ "" if params.checkedTable else "checked"}}>
                             <label class="govuk-label govuk-radios__label" for="{{ params.radioControlsName }}-1">Mapa</label>
@@ -15,6 +17,7 @@
                             <input class="govuk-radios__input" name="{{ params.radioControlsName }}" id="{{ params.radioControlsName }}-2" type="radio" value="table" {{ "checked" if params.checkedTable }}>
                             <label class="govuk-label govuk-radios__label" for="{{ params.radioControlsName }}-2">Tabuľka</label>
                         </div>
+                        </fieldset>
                     </div>
                 </div>
             </div>

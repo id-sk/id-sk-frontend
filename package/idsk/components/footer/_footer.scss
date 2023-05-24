@@ -12,8 +12,8 @@
   $govuk-footer-link-hover: $govuk-focus-text-colour;
 
   // Footer logo size
-  $idsk-footer-logo-width: 218px;
-  $idsk-footer-logo-height: 47px;
+  $idsk-footer-logo-width: 218px !default;
+  $idsk-footer-logo-height: 47px !default;
 
   @if ($govuk-use-legacy-palette) {
     // sass-lint:disable no-color-literals

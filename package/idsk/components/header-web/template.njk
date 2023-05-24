@@ -15,6 +15,21 @@
   {% endif %}
 {% endfor -%}
 
+{# ARIA LABEL TEXTS -#}
+{% set infoAboutPage = "Zobraziť informácie o stránke" %}
+{% set hideInfoAboutPage = "Skryť informácie o stránke" %}
+{% set languageMenu = "Rozbaliť jazykové menu" %}
+{% set hideLanguageMenu = "Skryť jazykové menu" %}
+{% set showMenu = "Rozbaliť menu" %}
+{% set closeMenu = "Zavrieť menu" %}
+{% set closeMenuButton = "Zavrieť" %}
+{% set showLogin = "Rozbaliť menu prihlásenia do Ministerstva investícií" %}
+{% set hideLogin = "Skryť menu prihlásenia do Ministerstva investícií" %}
+{% set innerNavigation = "Vnútorná navigácia" %}
+{% set closeBanner = "Zavrieť banner" %}
+{% set mainNavigation = "Hlavná navigácia" %}
+
+
 <div class="idsk-header-web__brand {{ 'idsk-header-web__brand--light' if brand.lightBackground }}">
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
@@ -31,7 +46,7 @@
                   {{ brand.gestor.gestorLink.text if brand.gestor.gestorLink.text else 'verejnej správy SR' }}
                 </a>
               {% else %}
-                <button class="idsk-header-web__brand-gestor-button" aria-label="Zobraziť informácie o stránke" aria-expanded="false" data-text-for-hide="Skryť informácie o stránke" data-text-for-show="Zobraziť informácie o stránke">
+                <button class="idsk-header-web__brand-gestor-button" aria-label="{{ infoAboutPage }}" aria-expanded="false" data-text-for-hide="{{ hideInfoAboutPage }}" data-text-for-show="{{ infoAboutPage }}">
                   verejnej správy SR
                   <span class="idsk-header-web__link-arrow"></span>
                 </button>
@@ -45,7 +60,7 @@
                   {{ brand.gestor.gestorLink.mobileText if brand.gestor.gestorLink.mobileText else 'e-gov' }}
                 </a>
               {% else %}
-                <button class="idsk-header-web__brand-gestor-button" aria-label="Zobraziť informácie o stránke" aria-expanded="false" data-text-for-hide="Skryť informácie o stránke" data-text-for-show="Zobraziť informácie o stránke">
+                <button class="idsk-header-web__brand-gestor-button" aria-label="{{ infoAboutPage }}" aria-expanded="false" data-text-for-hide="{{ hideInfoAboutPage }}" data-text-for-show="{{ infoAboutPage }}">
                   e-gov
                   <span class="idsk-header-web__link-arrow"></span>
                 </button>
@@ -57,7 +72,7 @@
                 <div class="govuk-grid-row">
                   <div class="govuk-grid-column-one-half">
                     <h3 class="govuk-body-s">
-                      Doména gov.sk je oficálna
+                      Doména gov.sk je oficiálna
                     </h3>
                     <p class="govuk-body-s">
                       Toto je oficiálna webová stránka orgánu verejnej moci Slovenskej republiky. Oficiálne stránky využívajú najmä doménu gov.sk. <a class="govuk-link" href="https://www.slovensko.sk/sk/agendy/agenda/_organy-verejnej-moci" target="_blank" title="odkazy na webové sídla orgánov verejnej moci">Odkazy na jednotlivé webové sídla orgánov verejnej moci nájdete na tomto odkaze</a>.
@@ -79,7 +94,7 @@
         {% endif -%}
         {% if brand.languages %}
           <div class="idsk-header-web__brand-language">
-            <button class="idsk-header-web__brand-language-button" aria-label="Rozbaliť jazykové menu" aria-expanded="false" data-text-for-hide="Skryť jazykové menu" data-text-for-show="Rozbaliť jazykové menu">
+            <button class="idsk-header-web__brand-language-button" aria-label="{{ languageMenu }}" aria-expanded="false" data-text-for-hide="{{ hideLanguageMenu }}" data-text-for-show="{{ languageMenu }}">
               {{ currentLanguage.text if currentLanguage else 'Slovenčina'}}
               <span class="idsk-header-web__link-arrow"></span>
             </button>
@@ -88,7 +103,9 @@
                 <li class="idsk-header-web__brand-language-list-item">
                   <a class="govuk-link idsk-header-web__brand-language-list-item-link {{ 'idsk-header-web__brand-language-list-item-link--selected' if language.selected }}"
                     title="{{ language.text }}"
-                    href="{{ language.link }}">
+                    href="{{ language.link }}"
+                    lang="{{language.language}}"
+                    >
                     {{ language.text }}
                   </a>
                 </li>
@@ -197,23 +214,24 @@
           </a>
 
           {% if params.navBar and params.headerType !== 'electronicService' %}
-            <button class="idsk-button idsk-header-web__main-headline-menu-button" aria-label="Rozbaliť menu" aria-expanded="false"
-            data-text-for-show="Rozbaliť menu" data-text-for-hide="Zavrieť menu">
+            <button class="idsk-button idsk-header-web__main-headline-menu-button" aria-label="{{ showMenu }}" aria-expanded="false"
+            data-text-for-show="{{ showMenu }}" data-text-for-hide="{{ closeMenu }}" data-text-for-close="{{ closeMenuButton }}">
               {{ main.menuBtnText if main.menuBtnText else 'Menu' }}
               <span class="idsk-header-web__menu-open"></span>
               <span class="idsk-header-web__menu-close"></span>
             </button>
           {% elif  params.headerType !== 'electronicService' and params.search %}
-            <button class="idsk-button idsk-header-web__main-headline-menu-button" aria-label="Rozbaliť menu" aria-expanded="false"
-            data-text-for-show="Rozbaliť menu" data-text-for-hide="Zavrieť menu">
+            <button class="idsk-button idsk-header-web__main-headline-menu-button" aria-label="{{ showMenu }}" aria-expanded="false"
+            data-text-for-show="{{ showMenu }}" data-text-for-hide="{{ closeMenu }}" data-text-for-close="{{ closeMenuButton }}">
               {{ main.menuBtnText if main.menuBtnText else 'Hľadaj' }}
               <span class="idsk-header-web__menu-open"></span>
               <span class="idsk-header-web__menu-close"></span>
             </button>
           {% elif main.loginButton %}
             <button class="idsk-button idsk-header-web__main-headline-menu-button idsk-header-web__main-headline-menu-button-service"
-            aria-label="Rozbaliť menu" aria-expanded="false" data-text-for-show="Rozbaliť menu" data-text-for-hide="Zavrieť menu">
-              <img src="{{ params.assetsPath | default('/assets/images/header-web/') }}/profile.svg" alt="Electronic service menu icon">
+            aria-label="{{ showLogin }}" aria-expanded="false" data-text-for-show="{{ showLogin }}" data-text-for-hide="{{ hideLogin }}"
+            data-text-for-close="{{ closeMenuButton }}">
+              <img src="{{ params.assetsPath | default('/assets/images/header-web/') }}/profile.svg" alt="Ikona elektronického servisného menu">
               <span class="idsk-header-web__menu-close"></span>
             </button>
           {% endif %}
@@ -247,12 +265,12 @@
         <div class="govuk-grid-column-full">
           <nav class="{{ 'idsk-header-web__nav-bar--buttons' if main.loginButton or main.secondaryButton }}">
             <ul class="idsk-header-web__nav-list {{ params.navBar.classes if params.navBar.classes }}"
-               aria-label="Hlavná navigácia">
+               aria-label="{{ mainNavigation }}">
               {% for item in navigation.slice(0, 5) %}
                 <li class="idsk-header-web__nav-list-item">
                   <a class="govuk-link idsk-header-web__nav-list-item-link" href="{{ item.link if not item.submenu else '#' + loop.index }}" {% for attribute, value
-                    in item.attributes %} {{attribute}}="{{value}}" {% endfor %} title="{{ item.text }}" {% if item.submenu %} aria-label="Rozbaliť {{ item.text }} menu" aria-expanded="false"
-                    data-text-for-hide="Zavrieť {{ item.text }} menu" data-text-for-show="Rozbaliť {{ item.text }} menu" {% endif %}>
+                    in item.attributes %} {{attribute}}="{{value}}" {% endfor %} title="{{ item.text }}" {% if item.submenu %} aria-label="{{ showMenu }} {{" " + item.text }}" aria-expanded="false"
+                    data-text-for-hide="{{ hideMenu }} {{" " + item.text }}" data-text-for-show="{{ showMenu }} {{" " + item.text }}" {% endif %}>
                     {{ item.text }}
                     {% if item.submenu %}
                       <div class="idsk-header-web__link-arrow"></div>
@@ -261,7 +279,7 @@
                   </a>
                   {% if item.submenu and (item.submenu | length < 6) %}
                     <div class="idsk-header-web__nav-submenulite">
-                      <ul class="idsk-header-web__nav-submenulite-list" aria-label="Vnútorná navigácia">
+                      <ul class="idsk-header-web__nav-submenulite-list" aria-label="{{ innerNavigation }}">
                         {% for subItem in item.submenu %}
                           <li class="idsk-header-web__nav-submenulite-list-item">
                             <a class="govuk-link idsk-header-web__nav-submenulite-list-item-link" href="{{ subItem.link }}"
@@ -277,7 +295,7 @@
                     <div class="idsk-header-web__nav-submenu">
                       <div class="govuk-width-container">
                         <div class="govuk-grid-row">
-                            <ul class="idsk-header-web__nav-submenu-list"  aria-label="Vnútorná navigácia">
+                            <ul class="idsk-header-web__nav-submenu-list"  aria-label="{{ innerNavigation }}">
                               {% for subItem in item.submenu.slice(0, 9) %}
                                 <li class="idsk-header-web__nav-submenu-list-item">
                                   <a class="govuk-link idsk-header-web__nav-submenu-list-item-link" href="{{ subItem.link }}"
@@ -325,7 +343,7 @@
             {{ banner.text if banner.text else 'It was popularised in the 1960s with the release of Letraset' }}
           </div>
           {% if (banner.closeBtn | dump | length === 0) or banner.closeBtn == true %}
-            <button class="idsk-header-web__banner-close" aria-label="Zavrieť banner"><span class="idsk-header-web__menu-close"></span></button>
+            <button class="idsk-header-web__banner-close" aria-label="{{ closeBanner }}"><span class="idsk-header-web__menu-close"></span></button>
           {% endif %}
         </div>
       </div>

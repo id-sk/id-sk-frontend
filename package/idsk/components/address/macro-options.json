@@ -56,5 +56,11 @@
                 "description": "href link address"
             }
         ]
+    },
+    {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "description": "text representing address"
     }
 ]

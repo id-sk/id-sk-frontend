@@ -1178,6 +1178,16 @@ Tabs.prototype.toggleMobileTab = function ($tab, currentTab) {
   if ($mobileTab.classList.contains('idsk-tabs__mobile-tab--selected') && currentTab) {
     $mobileTab.classList.remove('idsk-tabs__mobile-tab--selected');
     $mobilePanel.classList.add(this.mobileTabHiddenClass);
+    $mobileTab.setAttribute('aria-expanded', 'false');
+    $mobileTab.setAttribute('aria-label', $mobileTab.getAttribute('text-for-hide'));
+  }
+  else if ($mobileTab.classList.contains('idsk-tabs__mobile-tab--selected')) {
+    $mobileTab.setAttribute('aria-expanded', 'true');
+    $mobileTab.setAttribute('aria-label', $mobileTab.getAttribute('text-for-show'));
+  }
+  else {
+    $mobileTab.setAttribute('aria-expanded', 'false');
+    $mobileTab.setAttribute('aria-label', $mobileTab.getAttribute('text-for-hide'));
   }
 };
 

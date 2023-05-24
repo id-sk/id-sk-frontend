@@ -790,8 +790,11 @@ TableFilter.prototype.handleClickTogglePanel = function (e) {
   // set text for toggle
   var hidden = $content.style.height === '0px';
   var newToggleText = hidden ? openText : closeText;
+  var newToggleButton = hidden ? 'false' : 'true';
+  var $ariaToggleForm = document.querySelector('.idsk-table-filter__content');
   $el.innerHTML = newToggleText;
   $el.setAttribute('aria-label', newToggleText + ($el.dataset.categoryName ? ' ' + $el.dataset.categoryName : ''));
+  $ariaToggleForm.setAttribute('aria-hidden', newToggleButton);
 
   // toggle tabbable if content is shown or not
   var $items = $content.querySelectorAll(':scope > .idsk-table-filter__filter-inputs input, :scope > .idsk-table-filter__filter-inputs select, .idsk-filter-menu__toggle');

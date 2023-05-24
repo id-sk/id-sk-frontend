@@ -794,9 +794,17 @@ SearchResultsFilter.prototype.handleClickLinkPanel = function (e) {
     var $el = e.target || e.srcElement;
     var $linkPanelButton = $el.closest('.idsk-search-results__link-panel');
     var $contentPanel = $linkPanelButton.querySelector('.idsk-search-results__list');
+    var $ariaLabelComponent = $el.closest('.idsk-search-results__link-panel-button');
 
     toggleClass($contentPanel, 'idsk-search-results--hidden');
     toggleClass($linkPanelButton, 'idsk-search-results--expand');
+    if ($linkPanelButton.classList.contains('idsk-search-results--expand')) {
+        $ariaLabelComponent.setAttribute('aria-expanded', 'true');  
+        $ariaLabelComponent.setAttribute('aria-label', $ariaLabelComponent.getAttribute('data-text-for-hide')); 
+    } else {
+        $ariaLabelComponent.setAttribute('aria-expanded', 'false');
+        $ariaLabelComponent.setAttribute('aria-label', $ariaLabelComponent.getAttribute('data-text-for-show'));
+    }
 };
 
 return SearchResultsFilter;

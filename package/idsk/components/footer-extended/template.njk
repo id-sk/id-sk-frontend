@@ -1,3 +1,7 @@
+{% set heartSymbolText = "Ďakujeme za Vašu spätnú väzbu" %}
+{% set helpInfoText = "Aby sme vedeli zlepšiť obsah na tejto stránke, chceli by sme vedieť o Vašej skúsenosti so stránkou. Pošleme Vám link na formulár spätnej väzby. Jeho vyplnenie Vám zaberie iba 2 minúty." %}
+{% set footerButtonText = "Vyplniť prieskum" %}
+
 <div data-module="idsk-footer-extended">
     <footer class="idsk-footer-extended {{ " idsk-footer-extended--up-button-enabled" if params.upButtonEnabled }} {{ params.classes if params.classes }}">
         {% if params.upButtonEnabled == "true" %}
@@ -59,7 +63,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="idsk-footer-extended-heart" class="idsk-footer-extended-heart govuk-grid-column-full">
+                            <div id="idsk-footer-extended-heart" class="idsk-footer-extended-heart govuk-grid-column-full" aria-label="{{heartSymbolText}}">
                                 Ďakujeme za Vašu spätnú väzbu
                                 <svg class="idsk-footer-extended-heart--svg" width="291" height="22" viewbox="263 -4 291 22" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <path d="M271.42 19.33H290.42V0.33H271.42V19.33Z" fill="url(#pattern0)"/>
@@ -93,12 +97,12 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <p class="idsk-footer-extended-form-text">
+                                    <p class="idsk-footer-extended-form-text" aria-label="{{helpInfoText}}">
                                         Aby sme vedeli zlepšiť obsah na tejto stránke, chceli by sme vedieť o Vašej skúsenosti so stránkou. Pošleme Vám link na formulár spätnej väzby. Jeho vyplnenie Vám zaberie iba 2 minúty.
                                     </p>
                                     <br>
                                         <div class="idsk-footer-extended-feedback-button">
-                                            <a href="{{ params.fillFeedbackLink if params.fillFeedbackLink else '/custom-components/customer-surveys/basic/preview' }}" id="fill-feedback-help-form" title="Vyplniť prieskum" role="button" class="idsk-button" data-module="idsk-button">
+                                            <a href="{{ params.fillFeedbackLink if params.fillFeedbackLink else '/custom-components/customer-surveys/basic/preview' }}" id="fill-feedback-help-form" title="{{footerButtonText}}" role="button" class="idsk-button" data-module="idsk-button" aria-label="{{footerButtonText}}">
                                                 Vyplniť prieskum
                                             </a>
                                         </div>

@@ -11,8 +11,8 @@
   $idsk-header-link-active: #1d8feb;
   $idsk-header-nav-item-border-color: #2e3133;
 
-  $idsk-header-logo-width: 186px;
-  $idsk-header-logo-height: 30px;
+  $idsk-header-logo-width: 186px !default;
+  $idsk-header-logo-height: 30px !default;
 
   .idsk-header {
     @include govuk-font($size: 16);

@@ -15,7 +15,7 @@
                 <span class="govuk-visually-hidden">Chyba:</span>{{ item.error }}
             </span>
               {% endif %}
-              <input type="{{ item.type }}" class="govuk-input" id="{{ item.name }}" name="{{ item.name }}" {{ "required" if item.required }}>
+              <input type="{{ item.type }}" class="govuk-input" id="{{ item.name }}" name="{{ item.name }}" autocomplete="{{item.autocomplete}}" {{ "required" if item.required }}>
               {% elif item.type == "checkbox" %}
               {% if item.error %}
                 <span class="govuk-error-message">
