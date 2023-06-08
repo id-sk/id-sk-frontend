@@ -14,7 +14,7 @@
                 {% if params.searchEnabled %}
                     {% from "../../components/search-component/macro.njk" import idskSearchComponent %}
                     {{ idskSearchComponent({
-                        id : 'intro-block-search'
+                        id : params.searchId
                     }) }}
                     {% if params.bottomMenu %}
                       <div>
