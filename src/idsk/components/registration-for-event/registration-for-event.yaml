@@ -65,14 +65,14 @@ examples:
           tag: input
           name: name
           type: text
-          autocomplete: true
+          autocomplete: given-name
           required: true
         - label: Priezvisko
           error: Zadajte priezvisko.
           tag: input
           name: surname
           type: text
-          autocomplete: true
+          autocomplete: family-name
           required: true
         - label: Emailová adresa
           hint: Sem zadajte emailovú adresu v tvare email@email.sk
@@ -80,13 +80,13 @@ examples:
           tag: input
           name: email
           type: email
-          autocomplete: true
+          autocomplete: email
           required: true
         - label: Organizácia
           tag: input
           name: organization
           type: text
-          autocomplete: true
+          autocomplete: organization
         - label: Miesto konania podujatia
           tag: select
           name: city
