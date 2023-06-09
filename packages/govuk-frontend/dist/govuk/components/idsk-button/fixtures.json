@@ -120,21 +120,21 @@
             "options": {
                 "name": "secondary",
                 "text": "Secondary button",
-                "classes": "govuk-button--secondary"
+                "classes": "idsk-button--secondary"
             },
             "hidden": false,
-            "html": "<button name=\"secondary\" type=\"submit\" class=\"idsk-button govuk-button--secondary\" data-module=\"idsk-button\">\n  Secondary button\n</button>"
+            "html": "<button name=\"secondary\" type=\"submit\" class=\"idsk-button idsk-button--secondary\" data-module=\"idsk-button\">\n  Secondary button\n</button>"
         },
         {
             "name": "Secondary disabled",
             "options": {
                 "name": "secondary",
                 "text": "Secondary button disabled",
-                "classes": "govuk-button--secondary",
+                "classes": "idsk-button--secondary",
                 "disabled": true
             },
             "hidden": false,
-            "html": "<button name=\"secondary\" type=\"submit\" disabled aria-disabled=\"true\" class=\"idsk-button govuk-button--secondary idsk-button--disabled\" data-module=\"idsk-button\">\n  Secondary button disabled\n</button>"
+            "html": "<button name=\"secondary\" type=\"submit\" disabled aria-disabled=\"true\" class=\"idsk-button idsk-button--secondary idsk-button--disabled\" data-module=\"idsk-button\">\n  Secondary button disabled\n</button>"
         },
         {
             "name": "Secondary link",
@@ -142,31 +142,31 @@
                 "name": "secondary",
                 "text": "Secondary button",
                 "href": "/",
-                "classes": "govuk-button--secondary"
+                "classes": "idsk-button--secondary"
             },
             "hidden": false,
-            "html": "<a href=\"/\" role=\"button\" draggable=\"false\" class=\"idsk-button govuk-button--secondary\" data-module=\"idsk-button\">\n  Secondary button\n</a>"
+            "html": "<a href=\"/\" role=\"button\" draggable=\"false\" class=\"idsk-button idsk-button--secondary\" data-module=\"idsk-button\">\n  Secondary button\n</a>"
         },
         {
             "name": "Warning",
             "options": {
                 "name": "Warning",
                 "text": "Warning button",
-                "classes": "govuk-button--warning"
+                "classes": "idsk-button--warning"
             },
             "hidden": false,
-            "html": "<button name=\"Warning\" type=\"submit\" class=\"idsk-button govuk-button--warning\" data-module=\"idsk-button\">\n  Warning button\n</button>"
+            "html": "<button name=\"Warning\" type=\"submit\" class=\"idsk-button idsk-button--warning\" data-module=\"idsk-button\">\n  Warning button\n</button>"
         },
         {
             "name": "Warning disabled",
             "options": {
                 "name": "warning",
                 "text": "Warning button disabled",
-                "classes": "govuk-button--warning",
+                "classes": "idsk-button--warning",
                 "disabled": true
             },
             "hidden": false,
-            "html": "<button name=\"warning\" type=\"submit\" disabled aria-disabled=\"true\" class=\"idsk-button govuk-button--warning idsk-button--disabled\" data-module=\"idsk-button\">\n  Warning button disabled\n</button>"
+            "html": "<button name=\"warning\" type=\"submit\" disabled aria-disabled=\"true\" class=\"idsk-button idsk-button--warning idsk-button--disabled\" data-module=\"idsk-button\">\n  Warning button disabled\n</button>"
         },
         {
             "name": "Warning link",
@@ -174,10 +174,10 @@
                 "name": "Warning",
                 "text": "Warning button",
                 "href": "/",
-                "classes": "govuk-button--warning"
+                "classes": "idsk-button--warning"
             },
             "hidden": false,
-            "html": "<a href=\"/\" role=\"button\" draggable=\"false\" class=\"idsk-button govuk-button--warning\" data-module=\"idsk-button\">\n  Warning button\n</a>"
+            "html": "<a href=\"/\" role=\"button\" draggable=\"false\" class=\"idsk-button idsk-button--warning\" data-module=\"idsk-button\">\n  Warning button\n</a>"
         },
         {
             "name": "attributes",
