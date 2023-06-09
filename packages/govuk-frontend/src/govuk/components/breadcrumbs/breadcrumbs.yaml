@@ -38,39 +38,39 @@ examples:
     data:
       items:
         - text: Section
-          href: '/section'
+          href: '#'
         - text: Sub-section
-          href: '/section/sub-section'
+          href: '#'
   - name: with one level
     data:
       items:
         - text: Section
-          href: '/section'
+          href: '#'
   - name: with multiple levels
     data:
       items:
         - text: Home
           href: '/'
         - text: Section
-          href: '/section'
+          href: '#'
         - text: Sub-section
-          href: '/section/sub-section'
+          href: '#'
         - text: Sub Sub-section
-          href: '/section/sub-section/sub-sub-section'
+          href: '#'
   - name: without the home section
     data:
       items:
         - text: Service Manual
-          href: '/service-manual'
+          href: '#'
         - text: Agile Delivery
-          href: '/service-manual/agile-delivery'
+          href: '#'
   - name: with last breadcrumb as current page
     data:
       items:
         - text: Home
           href: '/'
         - text: Passports, travel and living abroad
-          href: '/browse/abroad'
+          href: '#'
         - text: Travel abroad
   - name: with collapse on mobile
     data:
@@ -79,9 +79,9 @@ examples:
         - text: Home
           href: '/'
         - text: Education, training and skills
-          href: '/education'
+          href: '#'
         - text: Special educational needs and disability (SEND) and high needs
-          href: '/education/special-educational-needs-and-disability-send-and-high-needs'
+          href: '#'
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: classes
