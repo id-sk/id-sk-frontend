@@ -514,6 +514,11 @@ SearchResults.prototype.handleClickLinkPanel = function (e) {
 
     toggleClass($contentPanel, 'idsk-search-results--hidden')
     toggleClass($linkPanelButton, 'idsk-search-results--expand')
+    if ($linkPanelButton.classList.contains('idsk-search-results--expand')) {
+        $el.setAttribute('aria-expanded', 'true')
+    } else {
+        $el.setAttribute('aria-expanded', 'false')
+    }
 }
 
 /**
