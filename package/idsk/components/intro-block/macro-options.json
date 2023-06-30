@@ -70,6 +70,12 @@
         "description": "Determines whether search should be part of intro block."
     },
     {
+        "name": "searchId",
+        "tyoe": "string",
+        "required": false,
+        "description": "Custom ID for search in intro block."
+    },
+    {
         "name": "headline",
         "type": "string",
         "required": false,

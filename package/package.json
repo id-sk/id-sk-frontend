@@ -1,7 +1,7 @@
 {
   "name": "@id-sk/frontend",
   "description": "ID-SK Frontend",
-  "version": "2.10.0",
+  "version": "2.11.0",
   "main": "idsk/all.js",
   "sass": "idsk/all.scss",
   "engines": {

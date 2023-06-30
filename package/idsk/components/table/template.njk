@@ -18,13 +18,14 @@
           <div class="govuk-form-group">
             <div class="govuk-radios govuk-radios--inline">
               <fieldset class="govuk-fieldset">
+                <legend class="govuk-visually-hidden">{{ params.radioOptionsLegend }}</legend>
                 {% for radio in params.radioOptions.slice(0, 2) %}
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" type="radio" name="radio-{{ params.uniqueId }}" id="radio-{{ params.uniqueId + '-' + loop.index }}" value="{{ radio.value }}" {% if loop.index == 1 %}checked=""{% endif %}>
-                        <label class="govuk-label govuk-radios__label" for="radio-{{ params.uniqueId }}">{{ radio.title }}</label>
-                    </div>
-                  </fieldset>
+                  <div class="govuk-radios__item">
+                    <input title="{{ radio.title }}" class="govuk-radios__input" type="radio" name="radio-{{ params.uniqueId }}" id="radio-{{ params.uniqueId + '-' + loop.index }}" value="{{ radio.value }}" {% if loop.index == 1 %}checked=""{% endif %}>
+                    <label class="govuk-label govuk-radios__label" for="radio-{{ params.uniqueId }}">{{ radio.title }}</label>
+                  </div>
                 {% endfor %}
+              </fieldset>
             </div>
           </div>
         </div>
