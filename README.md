@@ -19,7 +19,7 @@ Sú dva spôsoby, ako začať používať ID-SK Frontend vo vašej aplikácii.
 Odporúčame nainštalovať si ID-SK Frontend zo správcu balíčkov platformy [Node (NPM)](https://www.npmjs.com/package/@id-sk/frontend).
 
 ### 2. Inštaláciou kompilovaných súborov
-Môžete si tiež stiahnuť skompilované a minifikované prvky (CSS, Javascript) z [GitHub] (https://github.com/id-sk/id-sk-frontend/tree/master/dist).
+Môžete si tiež stiahnuť skompilované a minifikované prvky (CSS, Javascript) z [GitHub](https://github.com/id-sk/id-sk-frontend/tree/master/dist).
 Po inštalácii budete môcť vo vašej službe používať kód z dizajn systému ID-SK.
 
 ## Podpora prehliadačov
