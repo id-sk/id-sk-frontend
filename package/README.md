@@ -1,30 +1,30 @@
-ID-SK Frontend
+ID-SK2 Frontend
 =====================
 
-ID-SK Frontend je jednotný dizajnový systém elektronických služieb Slovenska, ktorý má za cieľ zjednotiť používateľské rozhrania a spôsob komunikácie s používateľom pri poskytovaní elektronických služieb na Slovensku.
+ID-SK2 Frontend je jednotný dizajnový systém elektronických služieb Slovenska, ktorý má za cieľ zjednotiť používateľské rozhrania a spôsob komunikácie s používateľom pri poskytovaní elektronických služieb na Slovensku.
 
-ID-SK Frontend obsahuje zdrojový kód, ktorý vychádza z britského dizajn manuálu elektronických služieb GOV.UK.
+ID-SK2 Frontend obsahuje zdrojový kód, ktorý vychádza z britského dizajn manuálu elektronických služieb GOV.UK.
 
-Živé príklady ID-SK komponentov s pokynmi ako ich využiť pri tvorbe vlastnej služby nájdete na {link na Dizajn systém [Dizajn manuále ID-SK](https://idsk-elements.herokuapp.com).
+Živé príklady ID-SK komponentov s pokynmi ako ich využiť pri tvorbe vlastnej služby nájdete na {link na Dizajn systém [Dizajn manuále ID-SK](https://idsk2.gov.sk/).
 
 ## Kontakt na tím
-ID-SK Frontend je tvorený pod záštitou Oddelenia behaviorálnych inovácií Úradu podpredsedu vlády SR pre investície a inovácie. Pre viac informácií nám svoje otázky smerujte na e-mail idsk@vicepremier.gov.sk.
+ID-SK2 Frontend je tvorený pod záštitou Oddelenia behaviorálnych inovácií Úradu podpredsedu vlády SR pre investície a inovácie. Pre viac informácií nám svoje otázky smerujte na e-mail idsk@mirri.gov.sk.
 
 Našli ste v ID-SK chybu alebo chcete navrhnúť zmenu? Môžete tak urobiť priamo na [https://github.com/id-sk/id-sk-frontend/issues](https://github.com/id-sk/id-sk-frontend/issues).
 
 ## Rýchly štart
-Sú 2 spôsoby, ako začať používať ID-SK Frontend vo vašej aplikácii.
+Sú 2 spôsoby, ako začať používať ID-SK2 Frontend vo vašej aplikácii.
 
 ### 1. Inštaláciou npm (odporúčame)
-Odporúčame nainštalovať si ID-SK Frontend zo správcu balíčkov platformy [Node (NPM)](https://www.npmjs.com/package/@id-sk/frontend).
+Odporúčame nainštalovať si ID-SK2 Frontend zo správcu balíčkov platformy [Node (NPM)](https://www.npmjs.com/package/@id-sk/frontend).
 
 ### 2. Inštaláciou kompilovaných súborov
 Môžete si tiež stiahnuť zkompilovanú a minifikovanú prvky (CSS, Javascript) z [GitHub] (https://github.com/id-sk/id-sk-frontend/tree/master/dist).
 Po inštalácii budete môcť vo vašej službe používať kód z dizajn systému ID-SK.
 
 ## Podpora prehliadačov
-ID-SK Frontend vám umožní budovať služby, ktoré sú v súlade s pokynmi uvedenými v [metodickom usmernení](https://idsk.gov.sk/uvod/metodika-ucd).
-ID-SK Frontend oficiálne podporuje nasledovné prehliadače:
+ID-SK2 Frontend vám umožní budovať služby, ktoré sú v súlade s pokynmi uvedenými v [metodickom usmernení](https://idsk2.gov.sk/uvod/metodika-ucd).
+ID-SK2 Frontend oficiálne podporuje nasledovné prehliadače:
 
 | Operačný systém | Prehliadač | Podpora |
 |--|--|--|
@@ -48,9 +48,9 @@ ID-SK Frontend oficiálne podporuje nasledovné prehliadače:
 V prípade, že v aplikácii generujete CSS súbory, ktorých súčasťou sú ID-SK štýly, na podporu prehliadača Internet Explorer 8 je potrebné vygenerovať a zahrnúť aj separátne štýly.
 
 ## Asistenčné technológie
-ID-SK Frontend vám umožní budovať služby, ktoré sú v súlade s pokynmi uvedenými v [metodickom usmernení](https://idsk.gov.sk/uvod/metodika-ucd).
+ID-SK2 Frontend vám umožní budovať služby, ktoré sú v súlade s pokynmi uvedenými v [metodickom usmernení](https://idsk2.gov.sk/uvod/metodika-ucd).
 
-ID-SK Frontend oficiálne podporuje nasledovné asistenčné technológie:
+ID-SK2 Frontend oficiálne podporuje nasledovné asistenčné technológie:
 
 | Softvér| Verzia| Typ| Prehliadač |
 |--|--|--|--|
