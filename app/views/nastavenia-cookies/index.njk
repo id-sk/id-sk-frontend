@@ -52,6 +52,21 @@
     html: "Tieto súbory zbierajú informácie o tom, ako sa používala webová stránka, napríklad ktoré stránky najčastejšie navštevujete a či sa vám zobrazili chybové hlásenia. Nezbierajú informácie, na základe ktorých by bolo možné zistiť vašu totožnosť. Všetky informácie sú anonymné. Používajú sa na zlepšenie funkčnosti webových stránok."
   }) }}
 
+
+  {{ govukCheckboxes({
+    idPrefix: "preferences-cookies",
+    items: [
+      {
+        text: "Preferenčné súbory cookie"
+      }
+    ]
+  }) }}
+
+  {{ govukInsetText({
+    html: "V týchto súboroch sa ukladajú vaše voľby (napr. jazykové preferencie) a osobné charakteristiky. Môžu sa v nich uložiť zmeny, ktoré ste na webovej stránke urobili. Dá sa zabezpečiť, aby sa informácie zbierali anonymne. Na ich základe nie je možné zistiť, ktoré iné webové stránky ste navštívili."
+  }) }}
+
+
   {{ idskButton({
   "classes": "save-cookie-settings",
   "text": "Uložiť nastavenia"

@@ -1,10 +1,10 @@
 //Init function 
-var gaCheckbox = document.getElementById("ga-cookies");
-var preferencesCheckbox = document.getElementById("preferences-cookies");
+var gaCheckbox = document.getElementById("ga-cookies-0");
+var preferencesCheckbox = document.getElementById("preferences-cookies-0");
 
 (function intCookies(){
-    gaCheckbox.checked = (window.localStorage.getItem('googleAnalytics') === 'true');   
-    preferencesCheckbox.checked = (window.localStorage.getItem('preferences') === 'true');
+    gaCheckbox.checked = (window.localStorage.getItem('googleAnalytics') === 'true') ? true : false;   
+    preferencesCheckbox.checked = (window.localStorage.getItem('preferences') === 'true') ? true : false;
 })();
 
 //Handle save cookie preferencies button
