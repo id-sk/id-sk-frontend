@@ -16,3 +16,23 @@ if(saveCookieButton){
     location.reload();
     }
 }
+
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+  
+  // Načítať existujúce hodnoty cookies a nastaviť checkboxy
+  document.addEventListener('DOMContentLoaded', function () {
+    const analyticsCheckbox = document.getElementById('analytics');
+    const preferencesCheckbox = document.getElementById('preferences');
+  
+    if (getCookie('cookie_preferences_analytics') === 'true') {
+      analyticsCheckbox.checked = true;
+    }
+    if (getCookie('cookie_preferences_preferences') === 'true') {
+      preferencesCheckbox.checked = true;
+    }
+  });
+  

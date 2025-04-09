@@ -9,17 +9,23 @@
   <head>
         <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WR6TZ5RBNF"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      //Check if Google Analytics exist in localStorage if not create key and add default value to true
-      if(!(window.localStorage.getItem('googleAnalytics'))){window.localStorage.setItem('googleAnalytics', 'true');}
-      if(window.localStorage.getItem('googleAnalytics') == 'true'){
-        window['ga-disable-G-WR6TZ5RBNF'] = true;
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-WR6TZ5RBNF');
-    </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+
+  // Ak localStorage nemá nastavené, predvolene nastavíme na 'false' (čiže nesledovať)
+  if (window.localStorage.getItem('googleAnalytics') === null) {
+    window.localStorage.setItem('googleAnalytics', 'false');
+  }
+
+  // Ak je nastavené na 'false', zakážeme GA
+  if (window.localStorage.getItem('googleAnalytics') === 'false') {
+    window['ga-disable-G-WR6TZ5RBNF'] = true;
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-WR6TZ5RBNF');
+</script>
     <meta charset="utf-8" />
     <title>{% block pageTitle %}GID-SK Frontend{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
