@@ -1,6 +1,6 @@
 //Init function 
-var gaCheckbox = document.getElementById("ga-cookies-0");
-var preferencesCheckbox = document.getElementById("preferences-cookies-0");
+var gaCheckbox = document.getElementById("ga-cookies");
+var preferencesCheckbox = document.getElementById("preferences-cookies");
 
 (function intCookies(){
     gaCheckbox.checked = (window.localStorage.getItem('googleAnalytics') === 'true') ? true : false;   
