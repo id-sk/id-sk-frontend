@@ -53,7 +53,7 @@
     {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}
     {%- if isConditional %} data-module="govuk-checkboxes"{% endif -%}>
     <fieldset class="govuk-fieldset">
-      <legend class="govuk-legend">Akordeón: </legend>
+      <legend class="govuk-legend"></legend>
     {% for item in params.items %}
       {% if item %}
         {#- If the user explicitly sets an id, use this instead of the regular idPrefix -#}
