@@ -33,18 +33,25 @@
   </div>
 {% endblock %}
 
+{# Toto bolo ako item v subtitles v bloku footer
+      {
+        item:"Nastavenia cookies",
+        href:"/nastavenia-cookies"
+      },
+#}
+
+
 {% block footer %}
   {% from "footer-extended/macro.njk" import idskFooterExtended %}
   {{ idskFooterExtended({
     characterLength : 350,
-    feedbackHeading : "Pomôžte nám zlepšiť jednotný dizajn manuál",
+    feedbackHeading : "Pomôžte nám zlepšiť jednotný dizajnový manuál",
     showFeedback : "true",
     showFeedbackMessage : "false",
     upButtonEnabled : "true",
     subtitles: [
       {
-        item:"Nastavenia cookies",
-        href:"/nastavenia-cookies"
+        item:"Na tomto webovom sídle sa využívajú len nevyhnutné/technické cookies."
       },
       {
         item:"Informácie o spracúvaní súborov cookies",

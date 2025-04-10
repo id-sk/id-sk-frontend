@@ -9,18 +9,21 @@
   <head>
         <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WR6TZ5RBNF"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      //Check if Google Analytics exist in localStorage if not create key and add default value to true
-      if(!(window.localStorage.getItem('googleAnalytics'))){window.localStorage.setItem('googleAnalytics', 'true');}
-      if(window.localStorage.getItem('googleAnalytics') == 'true'){
-        window['ga-disable-G-WR6TZ5RBNF'] = true;
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-WR6TZ5RBNF');
-    </script>
-    <meta charset="utf-8" />
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+
+  // Disable GA ak je v localStorage nastavené na false
+  if (localStorage.getItem('googleAnalytics') === 'false') {
+    window['ga-disable-G-WR6TZ5RBNF'] = true;
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-WR6TZ5RBNF');
+</script>
+
+<meta charset="utf-8" />
     <title>{% block pageTitle %}GID-SK Frontend{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="{{ themeColor | default('#0b0c0c') }}" /> {# Hardcoded value of $govuk-black #}
@@ -41,6 +44,7 @@
   <body class="govuk-template__body {{ bodyClasses }}">
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
+{# 
     {% block cookies %}
     <!-- COOKIES BANNER -->
       <div class="idsk-cookie-banner " data-nosnippet role="region" aria-label="Cookies na stránke IDSK" hidden>
@@ -114,6 +118,7 @@
         </div>
       </div>
     {% endblock %}
+#} 
 
     {% block skipLink %}
     {{ idskSkipLink({
@@ -159,6 +164,7 @@
           acceptButton.addEventListener('click', function (event) {
             cookieMessage.hidden = true
             cookieBannerAccepted.hidden = false
+            localStorage.setItem('googleAnalytics', 'true')
             localStorage.setItem('acceptedCookieBanner', 'true')
             event.preventDefault()
           })

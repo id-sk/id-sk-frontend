@@ -118,7 +118,7 @@ examples:
     data:
       logo: true
       meta:
-        copy: 'Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.'
+        copy: 'Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajnovým manuálom elektronických služieb.'
         footerLogoLink: 'https://www.mirri.gov.sk/'
 
   - name: with meta
@@ -126,7 +126,7 @@ examples:
     data:
       logo: true
       meta:
-        copy: 'Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.'
+        copy: 'Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajnovým manuálom elektronických služieb.'
         footerLogoLink: 'https://www.mirri.gov.sk/'
         visuallyHiddenTitle: Items
         items:
@@ -142,7 +142,7 @@ examples:
     data:
       logo: true
       meta:
-        copy: 'Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.'
+        copy: 'Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajnovým manuálom elektronických služieb.'
         footerLogoLink: 'https://www.mirri.gov.sk/'
         text: GOV.UK Prototype Kit v7.0.1
 
@@ -151,7 +151,7 @@ examples:
     data:
       logo: true
       meta:
-        copy: 'Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.'
+        copy: 'Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajnovým manuálom elektronických služieb.'
         footerLogoLink: 'https://www.mirri.gov.sk/'
         items:
           - href: '#1'
@@ -177,7 +177,7 @@ examples:
     data:
       logo: true
       meta:
-        copy: 'Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.'
+        copy: 'Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajnovým manuálom elektronických služieb.'
         footerLogoLink: 'https://www.mirri.gov.sk/'
         text: GOV.UK Prototype Kit v7.0.1
 
@@ -185,7 +185,7 @@ examples:
     data:
       logo: true
       meta:
-        copy: 'Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.'
+        copy: 'Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajnovým manuálom elektronických služieb.'
         footerLogoLink: 'https://www.mirri.gov.sk/'
       navigation:
         - title: Two column list
@@ -267,7 +267,7 @@ examples:
             - href: '/government/announcements'
               text: Announcements
       meta:
-        copy: 'Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajn manuálom elektronických služieb.'
+        copy: 'Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky. Vytvorené v súlade s Jednotným dizajnovým manuálom elektronických služieb.'
         footerLogoLink: 'https://www.mirri.gov.sk/'
         items:
           - href: '/help'

@@ -263,21 +263,25 @@
                     {% endif %}
                     <div class="govuk-grid-column-full">
                         <div class="idsk-footer-extended-description-panel{{ ' idsk-footer-extended-description-panel-top-border' if params.firstColumn.title }}">
-                            <div class="idsk-footer-extended-meta-item">
-                                <ul class="idsk-footer-extended-inline-list ">
-                                    {% for subtitle in params.subtitles %}
-                                        <li class="idsk-footer-extended-inline-list-item">
-                                            <a class="govuk-link" title="{{ subtitle.item }}" href="{{ subtitle.href }}">
-                                                {{ subtitle.item }}
-                                            </a>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
+<div class="idsk-footer-extended-meta-item">
+    <ul class="idsk-footer-extended-inline-list ">
+        {% for subtitle in params.subtitles %}
+            <li class="idsk-footer-extended-inline-list-item">
+                {% if subtitle.href %}
+                    <a class="govuk-link" title="{{ subtitle.item }}" href="{{ subtitle.href }}">
+                        {{ subtitle.item }}
+                    </a>
+                {% else %}
+                    <p>{{ subtitle.item }}</p>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
                             <div class="govuk-grid-column-two-thirds idsk-footer-extended-info-links">
                                 <p class="idsk-footer-extended-frame">Vytvorené v súlade s
-                                    <a class="govuk-link" title="Jednotným dizajn manuálom elektronických služieb." href="{{ params.designaddress if params.designaddress else '#' }}">
-                                        Jednotným dizajn manuálom elektronických služieb.
+                                    <a class="govuk-link" title="Jednotným dizajnovým manuálom elektronických služieb." href="{{ params.designaddress if params.designaddress else '#' }}">
+                                        Jednotným dizajnovým manuálom elektronických služieb.
                                     </a>
                                 </p>
                                 <p class="idsk-footer-extended-frame">
