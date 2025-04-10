@@ -162,6 +162,7 @@
           acceptButton.addEventListener('click', function (event) {
             cookieMessage.hidden = true
             cookieBannerAccepted.hidden = false
+            localStorage.setItem('googleAnalytics', 'true')
             localStorage.setItem('acceptedCookieBanner', 'true')
             event.preventDefault()
           })
