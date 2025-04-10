@@ -3,9 +3,9 @@ ID-SK Frontend
 
 ID-SK Frontend je jednotný dizajnový systém elektronických služieb Slovenska, ktorý má za cieľ zjednotiť používateľské rozhrania a spôsob komunikácie s používateľom pri poskytovaní elektronických služieb na Slovensku.
 
-ID-SK Frontend obsahuje zdrojový kód, ktorý vychádza z britského dizajn manuálu elektronických služieb GOV.UK.
+ID-SK Frontend obsahuje zdrojový kód, ktorý vychádza z britského dizajnového manuálu elektronických služieb GOV.UK.
 
-Živé príklady ID-SK komponentov s pokynmi ako ich využiť pri tvorbe vlastnej služby nájdete na [Dizajn manuále ID-SK](https://idsk.gov.sk/).
+Živé príklady ID-SK komponentov s pokynmi ako ich využiť pri tvorbe vlastnej služby nájdete na [Dizajnovom manuále ID-SK](https://idsk.gov.sk/).
 
 ## Kontakt na tím
 ID-SK Frontend je tvorený pod záštitou Oddelenia behaviorálnych inovácií Úradu podpredsedu vlády SR pre investície a inovácie. Pre viac informácií nám svoje otázky smerujte na e-mail idsk@vicepremier.gov.sk.

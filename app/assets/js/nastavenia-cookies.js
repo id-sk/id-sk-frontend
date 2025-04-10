@@ -46,6 +46,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // === Inicializácia ===
 
+  // Inicializácia localStorage
+  if (localStorage.getItem('googleAnalytics') === null) {
+    localStorage.setItem('googleAnalytics', 'false');
+  }
+
   // Checkboxy z cookies
   if (analyticsCheckbox) {
     analyticsCheckbox.checked = (getCookie('cookie_preferences_analytics') === 'true');
@@ -53,11 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (preferencesCheckbox) {
     preferencesCheckbox.checked = (getCookie('cookie_preferences_preferences') === 'true');
-  }
-
-  // Inicializácia localStorage
-  if (localStorage.getItem('googleAnalytics') === null) {
-    localStorage.setItem('googleAnalytics', 'false');
   }
 
   // Nastaviť disable flag pre GA

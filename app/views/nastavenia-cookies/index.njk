@@ -38,7 +38,7 @@
     html: "Sú to základné súbory cookie, ktoré umožňujú pohybovať sa po webovej stránke a používať jej funkcie. Tieto súbory cookie neukladajú žiadne informácie o vás, ktoré by sa dali použiť na marketing alebo na zapamätaniesi, čo ste si na internete pozerali."
   }) }}
 
-
+{#
   {{ govukCheckboxes({
     idPrefix: "ga-cookies",
     items: [
@@ -51,7 +51,7 @@
   {{ govukInsetText({
     html: "Tieto súbory zbierajú informácie o tom, ako sa používala webová stránka, napríklad ktoré stránky najčastejšie navštevujete a či sa vám zobrazili chybové hlásenia. Nezbierajú informácie, na základe ktorých by bolo možné zistiť vašu totožnosť. Všetky informácie sú anonymné. Používajú sa na zlepšenie funkčnosti webových stránok."
   }) }}
-
+#}
 
   {{ idskButton({
   "classes": "save-cookie-settings",
