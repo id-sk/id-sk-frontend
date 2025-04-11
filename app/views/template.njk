@@ -7,6 +7,8 @@
 <!DOCTYPE html>
 <html lang="{{ htmlLang | default('sk') }}" class="govuk-template {{ htmlClasses }}">
   <head>
+
+{#
         <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WR6TZ5RBNF"></script>
 
@@ -22,6 +24,7 @@
   gtag('js', new Date());
   gtag('config', 'G-WR6TZ5RBNF');
 </script>
+#}
 
 <meta charset="utf-8" />
     <title>{% block pageTitle %}GID-SK Frontend{% endblock %}</title>
@@ -146,7 +149,7 @@
 
     {% block bodyEnd %}
     {% endblock %}
-
+{#
     <script>
         var cookieBanner = document.querySelector('.idsk-cookie-banner')
         var cookieBannerAccepted = document.querySelector('.js-cookie-banner-accepted')
@@ -188,5 +191,6 @@
           })
         }
     </script>
+  #}
   </body>
 </html>

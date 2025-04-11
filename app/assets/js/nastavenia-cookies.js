@@ -1,3 +1,5 @@
+{#
+
 document.addEventListener('DOMContentLoaded', function () {
   const analyticsCheckbox = document.getElementById('analytics');
   const preferencesCheckbox = document.getElementById('preferences');
@@ -87,3 +89,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+#}
